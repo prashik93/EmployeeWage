@@ -5,6 +5,7 @@ public class EmployeeWageBuilder {
         int FULL_DAY_HOUR = 8;
         int PART_TIMR_HOUR = 4;
         int NUMBER_OF_WORKING_DAYS = 20;
+        int MAX_WORKING_HOURS = 100;
 
         //VARIABLES
         int fullDayPresent = 0;
@@ -13,7 +14,7 @@ public class EmployeeWageBuilder {
         int totalWorkingHours = 0;
         int wagesForAMonth = 0;
 
-        for (int day = 0; day < NUMBER_OF_WORKING_DAYS; day++) {
+        for (int day = 0; ((day < NUMBER_OF_WORKING_DAYS) && (totalWorkingHours < MAX_WORKING_HOURS)); day++) {
             int workingHours = 0;
             double empCheck = Math.floor(Math.random() * 10) % 3;
             switch ((int) empCheck) {
